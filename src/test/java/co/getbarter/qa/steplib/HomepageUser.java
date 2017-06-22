@@ -22,7 +22,12 @@ public class HomepageUser extends ScenarioSteps {
     }
 
     @Step
+    public void go_to_login_page() {
+        homepage.goToLoginPage();
+    }
+
+    @Step
     public void go_to_register_page() {
-        homepage.clickGetStarted();
+        homepage.goToRegisterPage();
     }
 }

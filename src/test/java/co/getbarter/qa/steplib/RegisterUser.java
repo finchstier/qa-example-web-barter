@@ -1,8 +1,18 @@
 package co.getbarter.qa.steplib;
 
 import co.getbarter.qa.pages.RegisterPage;
+import net.thucydides.core.annotations.Step;
+import net.thucydides.core.steps.ScenarioSteps;
 
-public class RegisterUser {
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.containsString;
+
+public class RegisterUser extends ScenarioSteps {
 
     private RegisterPage registerPage;
+
+    @Step
+    public void verify_register_page_is_displayed() {
+        assertThat(registerPage.getRegisterPageUrl(), containsString("register"));
+    }
 }

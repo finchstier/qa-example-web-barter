@@ -43,11 +43,23 @@ public class Homepage extends PageObject {
         openAt(url);
     }
 
-    public void clickGetStarted() {
+    public void goToRegisterPage() {
         waitFor(getStartedButton).click();
+    }
+
+    public void goToLoginPage() {
+        waitFor(loginLink).click();
     }
 
     public boolean isUserOnHomepage() {
         return isElementVisible(By.cssSelector(".container.Teaser"));
+    }
+
+    @Override
+    public final void setDefaultBaseUrl(String defaultBaseUrl) {
+        if (defaultBaseUrl == null) {
+            return;
+        }
+        super.setDefaultBaseUrl(defaultBaseUrl);
     }
 }

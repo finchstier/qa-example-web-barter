@@ -2,6 +2,8 @@ package co.getbarter.qa.steps;
 
 import co.getbarter.qa.steplib.HomepageUser;
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import net.thucydides.core.annotations.Steps;
 
 public class HomepageSteps {
@@ -15,8 +17,8 @@ public class HomepageSteps {
         homepageUser.verify_user_is_on_the_homepage();
     }
 
-    @Given("^I am new customer$")
-    public void am_new_customer() {
+    @When("^I go to the register page$")
+    public void go_to_the_register_page() {
         homepageUser.go_to_register_page();
     }
 }
