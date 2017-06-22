@@ -11,6 +11,14 @@ jobs:
 
       - checkout
 
+      - restore_cache:
+            key: circleci-qa-example-web-barter-{{ checksum "build.gradle" }}
+
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: circleci-qa-example-web-barter-{{ checksum "build.gradle" }}
+
       - run:
           name: build
           command: gradle clean build
