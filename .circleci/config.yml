@@ -20,10 +20,6 @@ jobs:
           key: circleci-qa-example-web-barter-{{ checksum "build.gradle" }}
 
       - run:
-          name: build
-          command: gradle clean build
-
-      - run:
           name: test
           command: gradle clean test aggregate
 
