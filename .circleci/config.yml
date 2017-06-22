@@ -12,16 +12,9 @@ jobs:
       - checkout
 
       - run:
-          name: init
-          command: gradle init
-
-      - run:
           name: build
           command: gradle clean build
 
-#      - store_artifacts:
-#          path: /tmp/artifacts
-#          prefix: tests
-
-#      - store_test_results:
-#          path: /tmp/target/
+      - run:
+          name: test
+          command: gradle clean test aggregate
