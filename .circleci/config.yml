@@ -1,0 +1,16 @@
+version: 2
+jobs:
+  build:
+    environment:
+      TEST_REPORTS: /tmp/target
+    working_directory: ~/qa-example-web-barter
+    steps:
+      - checkout
+      - run:
+          name: test
+          command: gradle clean test aggregate
+      - store_artifacts:
+          path: /tmp/artifacts
+          prefix: tests
+      - store_test_results:
+          path: /tmp/target/
