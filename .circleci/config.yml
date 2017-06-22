@@ -1,16 +1,27 @@
 version: 2
 jobs:
   build:
-    environment:
-      TEST_REPORTS: /tmp/target
+
     working_directory: ~/qa-example-web-barter
+
+    docker:
+      - image: circleci/openjdk:8-jdk-browsers
+
     steps:
+
       - checkout
+
       - run:
-          name: test
-          command: gradle clean test aggregate
-      - store_artifacts:
-          path: /tmp/artifacts
-          prefix: tests
-      - store_test_results:
-          path: /tmp/target/
+          name: init
+          command: gradle init
+
+      - run:
+          name: build
+          command: gradle clean build
+
+#      - store_artifacts:
+#          path: /tmp/artifacts
+#          prefix: tests
+
+#      - store_test_results:
+#          path: /tmp/target/
