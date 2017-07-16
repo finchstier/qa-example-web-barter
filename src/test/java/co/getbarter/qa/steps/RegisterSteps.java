@@ -1,5 +1,6 @@
 package co.getbarter.qa.steps;
 
+import co.getbarter.qa.steplib.HomepageUser;
 import co.getbarter.qa.steplib.RegisterUser;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -10,6 +11,9 @@ public class RegisterSteps {
 
     @Steps
     private RegisterUser registerUser;
+
+    @Steps
+    private HomepageUser homepageUser;
 
     @When("^I register for an account$")
     public void register_for_an_account() {}
@@ -23,5 +27,6 @@ public class RegisterSteps {
 
     @Given("^I am on the register page$")
     public void want_to_register() {
+        homepageUser.am_on_the_homepage();
     }
 }

@@ -17,6 +17,11 @@ public class HomepageUser extends ScenarioSteps {
     }
 
     @Step
+    public void am_on_the_homepage() {
+        open_homepage();
+        verify_user_is_on_the_homepage();
+    }
+    @Step
     public void verify_user_is_on_the_homepage() {
         assertThat(homepage.isUserOnHomepage(), is(true));
     }
