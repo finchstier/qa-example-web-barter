@@ -16,7 +16,9 @@ public class RegisterSteps {
     private HomepageUser homepageUser;
 
     @When("^I register for an account$")
-    public void register_for_an_account() {}
+    public void register_for_an_account() {
+        registerUser.register_user();
+    }
 
 
     @Then("^I should be on the register page$")
@@ -28,5 +30,6 @@ public class RegisterSteps {
     @Given("^I am on the register page$")
     public void want_to_register() {
         homepageUser.am_on_the_homepage();
+        homepageUser.go_to_register_page();
     }
 }

@@ -15,4 +15,10 @@ public class RegisterUser extends ScenarioSteps {
     public void verify_register_page_is_displayed() {
         assertThat(registerPage.getRegisterPageUrl(), containsString("register"));
     }
+
+    @Step
+    public void register_user() {
+        registerPage.registerUser();
+        waitABit(5000);
+    }
 }
