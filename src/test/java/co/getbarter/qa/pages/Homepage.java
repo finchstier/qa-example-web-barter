@@ -6,6 +6,8 @@ import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Homepage extends PageObject {
 
@@ -31,6 +33,7 @@ public class Homepage extends PageObject {
     private WebElementFacade loginLink;
 
     private final String url;
+    private static final Logger LOGGER = LoggerFactory.getLogger(Homepage.class);
 
     public Homepage() {
         super();
